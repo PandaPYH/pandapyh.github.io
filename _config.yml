@@ -1,99 +1,85 @@
-#
-# This file contains configuration flags to customize your site
-#
+# Site settings 配置站点
+title: "Yonghua Pan's blog"
+description: 'Ph.D Candidate in Nanjing University of Science and Technology'
+keyword: 'Yonghua Pan'
+url: '' # your host
 
-# Name of your site (displayed in the header)
-name: Yonghua Pan's Tech Blog
+# when build blog on server, if you don't need baseurl, you should leave this value blank.
+# 在服务器上建站时，如果你不需要子域名，请将这一格留空
+# if you're using GitHub Pages, set baseurl to your blog's .
+# 如果你在使用 GitHub Pages, 请将 baseurl 设置为你的网址的子域名
+# for example, if your site is "kaeyleo.github.io", then this url should leave blank.
+# 例如，当你的域名是 "kaeyleo.github.io"  时，这个 url 需要留空
+# but if your created a repo named "myblog", and the site is "kaeyleo.github.io/myblog", change baseurl to '/myblog'
+# 但是，如果你创建了一个叫 "myblog" 的网站，此时网址会变成 "kaeyleo.github.io/myblog" ，这时再将 baseurl 设置为 '/myblog'
+baseurl: ''
 
-# Name of the author
-author: Yonghua Pan
+# Navigation links
+nav:
+  home: '/'
+  tags: '/tags.html'
+  public: '/public.html'
 
-# Short bio or description (displayed in the header)
-description: Yonghua Pan's Tech Blog
+# Footer
+footer:
+  since: 2017
 
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: /images/reverie.png
+# Author 配置博主信息
+author: 'Yonghua Pan'
+nickname: 'Panda'
+bio: 'Deep Learning Researcher'
+avatar: '/assets/img/avatar.jpg'
 
-#
-# Flags below are optional
-#
+# Search
+search: true
 
-# Includes an icon in the footer for each username you enter
-footer-links:
-  dribbble:
-  email: 3330374pyh@gmail.com
-  facebook:
-  flickr:
-  github: PandaPYH
-  instagram:
-  linkedin: 
-  pinterest:
-  rss: rss
-  twitter: 
-  stackoverflow: 
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
-  playconsole:
+# Night mode
+nightMode: true
 
+# Comments 评论功能
+comments:
+  disqus: false
+  disqus_url: 'https://liaokeyu.disqus.com/embed.js'
 
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
-disqus: 
+# MathJax 公式支持 by Ray-Eldath
+mathjax: true
 
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics: UA-43339302-11
+# Share
+social-share: true
+social-share-items: ['wechat', 'weibo', 'douban', 'twitter']
 
-# Your website URL (e.g. http://amitmerchant1990.github.io or http://www.amitmerchant.com)
-# Used for Sitemap.xml and your RSS feed
-url: https://pandapyh.github.io/
-enforce_ssl: https://pandapyh.github.io/
+# theme color 主题皮肤
+theme-color: 'default'  # pink or default
 
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
-baseurl: "/"
+# Post header background patterns (when the post no cover): circuitBoard, overlappingCircles, food, glamorous, ticTacToe, seaOfClouds
+postPatterns: 'circuitBoard'
 
-#
-# !! You don't need to change any of the configuration flags below !!
-#
+# SNS settings 配置社交网站
+# url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
+sns:
+  github: '//github.com/pandapyh'
 
-permalink: /:title/
+# Tags 设置标签
+recommend-tags: true # whether or not display recommend-tags on the sidebar
+recommend-condition-size: 12 # a tag will be recommended if the size of it is more than this value
 
-# The release of Jekyll Now that you're using
-version: v1.2.0
-
-# Jekyll 3 now only supports Kramdown for Markdown
-kramdown:
-  # Use GitHub flavored markdown, including triple backtick fenced code blocks
-  input: GFM
-  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    # Use existing pygments syntax highlighting css
-    css_class: 'highlight'
-
-# Set the Sass partials directory, as we're using @imports
-sass:
-  style: :expanded # You might prefer to minify using :compressed
-
-# Use the following plug-ins
-plugins:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
-  - jekyll-seo-tag
-  - jekyll-paginate
-
-include: ['_pages']
-
+# Build settings
 paginate: 6
-paginate_path: /page:num/
+paginate_path: 'page:num'
+exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'README.md']
 
-# Exclude these files from your production _site
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - CNAME
+# Markdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
 
+# RSS
+RSS: false
+
+# Permalink
+# See: https://github.com/kaeyleo/jekyll-theme-H2O/issues/35
+permalink: /:year/:month/:day/:title.html
+
+# Plugins
+plugins: [jekyll-paginate]
